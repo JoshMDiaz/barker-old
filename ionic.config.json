@@ -1,0 +1,8 @@
+{
+  "name": "canine_connection",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
