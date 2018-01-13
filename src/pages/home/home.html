@@ -1,13 +1,7 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Dogs</ion-title>
-  </ion-navbar>
-</ion-header>
-
 <ion-content padding>
   <ion-grid>
-    <ion-row>
-      <ion-card *ngFor="let dog of dogs">
+    <ion-row class="dog-cards">
+      <ion-card *ngFor="let dog of dogs" class="dog-card">
         <div class="main-image">
           <img [src]="dog.image" />
         </div>

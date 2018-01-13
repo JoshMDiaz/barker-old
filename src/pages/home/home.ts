@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ToastController } from 'ionic-angular';
 import { FirebaseService } from './../../providers/firebase-service';
-import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
-import { Observable } from 'rxjs/Observable';
-import { HttpClient } from '@angular/common/http';
+import { AngularFireDatabase } from 'angularfire2/database';
+// import { Observable } from 'rxjs/Observable';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @Component({
   selector: 'page-home',
@@ -14,7 +14,7 @@ export class HomePage {
   newDog = '';
   dogs: Array<any>;
 
-  constructor(public navCtrl: NavController, public firebaseService: FirebaseService, db: AngularFireDatabase, private http: HttpClient) {
+  constructor(public navCtrl: NavController, public firebaseService: FirebaseService, db: AngularFireDatabase, private afAuth: AngularFireAuth, private toast: ToastController) {
     // this.dogs = db.list('dogs').valueChanges();
   }
 
@@ -43,6 +43,22 @@ export class HomePage {
 
   ngAfterViewInit() {
     this.dogs = this.buildDogData();
+  }
+
+  ionViewWillLoad() {
+    this.afAuth.authState.subscribe(data => {
+      if (data && data.email && data.uid) {
+        this.toast.create({
+          message: `${data.email} is logged in!`,
+          duration: 3000
+        }).present();
+      } else {
+        this.toast.create({
+          message: `Email does not exist!`,
+          duration: 3000
+        }).present();
+      }
+    });
   }
 
   // addDog() {
