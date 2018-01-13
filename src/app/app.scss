@@ -15,6 +15,21 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
+body {
+  font-size: $base-font-size;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $rubik;
+}
+h1 {
+  text-transform: uppercase;
+  font-size: 3em;
+}
+
 ion-card {
   width: calc(100vw - 24px) !important;
+}
+ion-item.item {
+  padding-left: 0;
 }
