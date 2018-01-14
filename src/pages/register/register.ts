@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { User } from '../../models/user';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { HomePage } from '../home/home';
@@ -12,12 +12,22 @@ import { HomePage } from '../home/home';
 export class RegisterPage {
   user = {} as User;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private afAuth: AngularFireAuth) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private afAuth: AngularFireAuth, private toast: ToastController) {
 
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');
+  }
+
+  presentToast() {
+    let toast = this.toast.create({
+      message: `Welcome ${this.user.email}! Feel free to complete your user profile at any time!`,
+      duration: 3000,
+      position: 'top'
+    });
+
+    toast.present();
   }
 
   async register(user: User) {
@@ -26,6 +36,7 @@ export class RegisterPage {
       console.log(result);
       if (result) {
         this.navCtrl.setRoot(HomePage);
+        this.presentToast();
       }
     } catch (e) {
       console.log(e);

@@ -1,10 +1,10 @@
 <ion-content padding>
   <ion-grid>
-    <ion-row align-items-center class="login-content">
+    <ion-row align-items-center class="form-content">
       <ion-col>
         <ion-row>
           <ion-col>
-            <h1 ion-text color="primary" text-center>Login</h1>
+            <h1 ion-text color="white" text-center>Login</h1>
           </ion-col>
         </ion-row>
 
@@ -25,15 +25,21 @@
 
         <ion-row padding>
           <ion-col>
-            <button ion-button block (click)="login(user)">Login</button>
+            <button ion-button block color="light" (click)="register()">Sign Up</button>
           </ion-col>
           <ion-col>
-            <button ion-button block color="light" (click)="register()">Register</button>
+            <button ion-button block (click)="login(user)">Login</button>
           </ion-col>
         </ion-row>
 
       </ion-col>
     </ion-row>
+
+    <!-- <ion-row padding>
+      <ion-col>
+        <button ion-button block color="facebook">Login with Facebook</button>
+      </ion-col>
+    </ion-row> -->
   </ion-grid>
 
 </ion-content>

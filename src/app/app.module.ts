@@ -9,7 +9,6 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { FirebaseService } from './../providers/firebase-service';
-// import { AngularFirestore } from 'angularfire2/firestore';
 import { FIREBASE_CONFIG } from './app.firebase.config';
 
 import { AboutPage } from '../pages/about/about';
@@ -21,8 +20,6 @@ import { LoginPage } from '../pages/login/login';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
-
 
 @NgModule({
   declarations: [
