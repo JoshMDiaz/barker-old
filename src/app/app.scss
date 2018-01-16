@@ -28,9 +28,6 @@ h1 {
   font-size: 3em;
 }
 
-ion-card {
-  width: calc(100vw - 24px) !important;
-}
 ion-item.item {
   padding-left: 0;
 }
@@ -40,7 +37,9 @@ ion-content {
   }
 }
 
-button.no-border {
+.no-border {
   border: 0;
+}
+.no-padding {
   padding: 0;
 }

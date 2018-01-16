@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
-import { BackButtonComponent } from './back-button/back-button';
 import { IonicModule } from 'ionic-angular';
+import { BackButtonComponent } from './back-button/back-button';
+import { DogCardComponent } from './dog-card/dog-card';
 
 @NgModule({
-	declarations: [BackButtonComponent],
+	declarations: [BackButtonComponent,
+    DogCardComponent],
 	imports: [IonicModule],
-	exports: [BackButtonComponent]
+	exports: [BackButtonComponent,
+    DogCardComponent]
 })
 export class ComponentsModule {}

@@ -1,0 +1,9 @@
+dog-card {
+  .main-image {
+    height: calc(100vw - 24px);
+    overflow: hidden;
+  }
+  .gender-icon {
+    width: auto;
+  }
+}

@@ -1,0 +1,19 @@
+<ion-card class="dog-card">
+  <div class="main-image">
+    <img [src]="dog.image" />
+  </div>
+  <!-- breed: 'Husky',
+  gender: 'female',
+  eyes: 'blue',
+  age: 2 + i,
+  name: 'Simba', -->
+  <ion-card-content>
+    <ion-card-title>
+      <ion-row justify-content-between align-items-center>
+        <span>{{dog.name}}</span>
+        <span>{{dog.age}} year{{dog.age > 1 ? 's' : ''}} old</span>
+        <img [src]="dog.gender === 'male' ? '/assets/imgs/male.png' : '/assets/imgs/female.png'" class="gender-icon" />
+      </ion-row>
+    </ion-card-title>
+  </ion-card-content>
+</ion-card>
