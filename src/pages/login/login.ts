@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { User } from '../../models/user';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { HomePage } from '../home/home';
+import { LandingPage } from '../landing/landing';
 
 @IonicPage()
 @Component({
@@ -16,15 +17,14 @@ export class LoginPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+
   }
 
   async login (user: User) {
     try {
       const result = await this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
-      console.log(result);
       if (result) {
-        this.navCtrl.setRoot(HomePage, {});
+        this.navCtrl.setRoot(LandingPage, {});
       }
     } catch (e) {
       console.log(e);

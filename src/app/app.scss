@@ -33,7 +33,7 @@ ion-item.item {
 }
 ion-content {
   &.content {
-    background: map-get($colors, light);
+    background: linear-gradient(65deg, map-get($colors, background2), map-get($colors, background1));
   }
 }
 

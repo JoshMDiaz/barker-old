@@ -4,10 +4,14 @@ import { BackButtonComponent } from './back-button/back-button';
 import { DogCardComponent } from './dog-card/dog-card';
 
 @NgModule({
-	declarations: [BackButtonComponent,
-    DogCardComponent],
+	declarations: [
+    BackButtonComponent,
+    DogCardComponent
+  ],
 	imports: [IonicModule],
-	exports: [BackButtonComponent,
-    DogCardComponent]
+	exports: [
+    BackButtonComponent,
+    DogCardComponent
+  ]
 })
 export class ComponentsModule {}

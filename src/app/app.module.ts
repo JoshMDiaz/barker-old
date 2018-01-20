@@ -13,10 +13,11 @@ import { FIREBASE_CONFIG } from './app.firebase.config';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
+import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
+import { LandingPage } from '../pages/landing/landing';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -26,9 +27,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     AboutPage,
     ContactPage,
-    HomePage,
     TabsPage,
-    LoginPage
+    HomePage,
+    LoginPage,
+    LandingPage
   ],
   imports: [
     BrowserModule,
@@ -44,9 +46,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     AboutPage,
     ContactPage,
-    HomePage,
     TabsPage,
-    LoginPage
+    HomePage,
+    LoginPage,
+    LandingPage
   ],
   providers: [
     StatusBar,
