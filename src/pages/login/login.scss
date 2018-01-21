@@ -4,4 +4,13 @@ page-login {
       background: url('../../assets/imgs/login_bg.jpg');
     }
   }
+
+  ion-label {
+    color: map-get($colors, light);
+  }
+
+  ion-input {
+    color: map-get($colors, white);
+  }
+
 }

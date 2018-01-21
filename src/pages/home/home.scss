@@ -1,3 +1,10 @@
 page-home {
-  
+  ion-label {
+    color: map-get($colors, light);
+  }
+
+  ion-input {
+    color: map-get($colors, white);
+  }
+
 }
