@@ -5,7 +5,6 @@ import { Http, Response } from "@angular/http";
 import { Profile } from "../../models/profile";
 import { AngularFireAuth } from "angularfire2/auth";
 import { AngularFireDatabase } from "angularfire2/database";
-import { HomePage } from "../home/home";
 
 /**
  * Generated class for the ProfilePage page.
@@ -41,9 +40,9 @@ export class ProfilePage {
   createProfile() {
     this.afAuth.authState.take(1).subscribe(auth => {
       this.afDatabase
-        .list(`profile/${auth.uid}`)
-        .push(this.profile)
-        .then(() => this.navCtrl.push(HomePage));
+        .object(`profile/${auth.uid}`)
+        .set(this.profile)
+        .then(() => this.navCtrl.setRoot('HomePage'));
     });
   }
 

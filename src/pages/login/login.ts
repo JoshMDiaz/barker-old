@@ -1,10 +1,11 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { User } from "../../models/user";
-import { AngularFireAuth } from "angularfire2/auth";
 import { HomePage } from "../home/home";
 import { LandingPage } from "../landing/landing";
 import { ProfilePage } from "../profile/profile";
+import { AngularFireAuth } from "angularfire2/auth";
+import { AngularFireDatabase } from "angularfire2/database";
 
 @IonicPage()
 @Component({
@@ -17,7 +18,8 @@ export class LoginPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private afAuth: AngularFireAuth
+    private afAuth: AngularFireAuth,
+    private afd: AngularFireDatabase
   ) {}
 
   ionViewDidLoad() {}
@@ -29,11 +31,7 @@ export class LoginPage {
         user.password
       );
       if (result) {
-        if (true) { //TODO: test to see if user has finished creating a profile
-          this.navCtrl.setRoot(ProfilePage, {});
-        } else {
-          this.navCtrl.setRoot(LandingPage, {});
-        }
+        this.navCtrl.setRoot('LandingPage', {uid: result.uid});
       }
     } catch (e) {
       console.log(e);
@@ -41,6 +39,6 @@ export class LoginPage {
   }
 
   register() {
-    this.navCtrl.push("RegisterPage");
+    this.navCtrl.push('RegisterPage');
   }
 }

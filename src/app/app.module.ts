@@ -15,11 +15,6 @@ import { AboutPage } from "../pages/about/about";
 import { ContactPage } from "../pages/contact/contact";
 import { TabsPage } from "../pages/tabs/tabs";
 
-import { HomePage } from "../pages/home/home";
-import { LoginPage } from "../pages/login/login";
-import { LandingPage } from "../pages/landing/landing";
-import { ProfilePage } from "../pages/profile/profile";
-
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
@@ -34,10 +29,6 @@ import { PipesModule } from "../pipes/pipes.module";
     AboutPage,
     ContactPage,
     TabsPage,
-    HomePage,
-    LoginPage,
-    LandingPage,
-    ProfilePage
   ],
   imports: [
     BrowserModule,
@@ -56,10 +47,6 @@ import { PipesModule } from "../pipes/pipes.module";
     AboutPage,
     ContactPage,
     TabsPage,
-    HomePage,
-    LoginPage,
-    LandingPage,
-    ProfilePage
   ],
   providers: [
     StatusBar,
